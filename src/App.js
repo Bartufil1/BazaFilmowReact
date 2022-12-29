@@ -1,19 +1,25 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Title from './components/Title';
+import Navbar from './components/Navbar';
 import './components/style.css';
-import Movie from './components/Movie';
 import Footer from './components/Footer';
 import OpenMovie from "./components/OpenMovie";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import AddMovie from "./components/AddMovie";
 import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
-
+import MovieDescription from "./components/MovieDescription";
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
-            <Title/>
+            <Navbar/>
                 <Routes>
                     <Route path="/" element={<OpenMovie/>}/>
+                    <Route path="/signup" element={<Register/>}/>
+                    <Route path="/signin" element={<Login/>}/>
+                    <Route path="/description/:id" element={<MovieDescription/>}/>
+                    <Route path="/add" element={<AddMovie/>}/>
                 </Routes>
             <Footer/>
             </BrowserRouter>

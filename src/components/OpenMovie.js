@@ -3,6 +3,7 @@ import Movie from "./Movie";
 import MovieText from "./MovieText";
 import MarkMovie from "./MarkMovie";
 import data from "../Data";
+import MovieDetails from "./MovieDetails";
 
 const OpenMovie =()=>{
 const data2=data
@@ -12,10 +13,11 @@ const data2=data
             {
             data.map((data, index)=>{
                 return(
-                    <div className="filmCointainer">
+                    <div className="filmCointainer" key={index}>
                         <Movie/>
                         <div className="movieData">
                             <MovieText/>
+                            <MovieDetails/>
                             <MarkMovie/>
                         </div>
                     </div>

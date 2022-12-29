@@ -1,13 +1,47 @@
-import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import React, {Component, useState} from 'react';
+
 const Login=() =>{
 
-    return(
-        <div>
-            <Link to="/Login">
-                <button type="button" className="btn login">Zaloguj</button>
-            </Link>
-        </div>
-    )
-}
+    const [login,setLogin] = useState("")
+    const [password,setPassword] = useState("")
+    const sendData = (event) =>
+    {
+        event.preventDefault()
+        const data = {
+            login,password
+        }
+        console.log(data)
+    }
+
+            return(
+                <div className="loginForm">
+                <form onSubmit={sendData}>
+                    <h3>Zaloguj się</h3>
+                    <div className="mb-3">
+                        <label>Login</label>
+                        <input
+                            type="login"
+                            className="form-control"
+                            placeholder="Wpisz login"
+                            value={login}
+                            onChange={(event)=>setLogin(event.target.value)}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label>Hasło</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Wpisz hasło"
+                            value={password}
+                            onChange={(event)=>setPassword(event.target.value)}
+                        />
+                    </div>
+                    <div className="d-grid">
+                        <button type="submit" className="btn btn-primary"> Zaloguj się</button>
+                    </div>
+                </form>
+                </div>
+            )
+    }
 export default Login;
