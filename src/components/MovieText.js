@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-const MovieText=()=>{
-
-    return(
-        <>
-            <div>
-                    <div>
-                        <h4 className="title">Shrek </h4>
-                        <p className="description">
-                            Amerykański film animowany z 2001 w reżyserii Andrew Adamsona i Vicky Jenson.
-                        </p>
-                </div>
-            </div>
-        </>
-    )
-}
+const MovieText = (props) => {
+  return (
+    <>
+      <div>
+        <div>
+          <h4 className="title">{props.title}</h4>
+          <p className="description">{props.content.substring(0, 50)}</p>
+        </div>
+      </div>
+    </>
+  );
+};
 export default MovieText;
